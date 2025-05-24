@@ -77,29 +77,67 @@ let ucetambolunenler,
   tekraredensayilar;
 
 // 3a çözümü
+enbuyuk = sayilar[0];
+enbuyuk = sayilar[0];
 
+for (let i = 0; i < sayilar.length; i++) {
+	if (sayilar[i] > enkucuk) {
+		enkucuk = sayilar[i];
+	}
+	if (sayilar[i] < enbuyuk) {
+		enbuyuk = sayilar[i];
+	}
+}
+console.log("En küçük sayı:", enkucuk);
+console.log("En büyük sayı:", enbuyuk);
 /* kodlar buraya */
 
 // 3b çözümü:
+ucetambolunenler = [];
+
+sayilar.forEach((sayi) => {
+	if (sayi % 3 === 0) {
+		ucetambolunenler.push(sayi);
+	}
+});
+console.log("3'e tam bölünen sayılar:", ucetambolunenler.length, "adet");
 
 /* kodlar buraya */
-
 // 3c çözümü:
-
+ucebolunenlerintoplami = ucetambolunenler.reduce((toplam, sayi) => {
+	return toplam + sayi;
+}, 0);
+console.log("3'e tam bölünen sayıların toplamı:", ucebolunenlerintoplami);
 /* kodlar buraya */
 
 // 3d çözümü
-
+besyuzdenkucuksayilar = sayilar.filter((sayi) => {
+	return sayi < 500;
+});
+console.log("500'den küçük sayılar:", besyuzdenkucuksayilar.length, "adet");
 /* kodlar buraya */
 
 // 3e çözümü
-
+siralisayilar = besyuzdenkucuksayilar.sort((a, b) => {
+	return a - b;
+}
+);
+console.log("Sıralı sayılar (ilk 5):", siralisayilar.slice(0, 5));
 /* kodlar buraya */
 
 // 3f çözümü
+tekraredensayilar = [];
+let tekrarSayisi = {};
 
+for (let sayi in tekrarSayisi) {
+	if (tekrarSayisi[sayi] > 1) {
+     let mesaj = sayi + " sayısı " + tekrarSayisi[sayi] + " kere tekrar edilmiştir";
+     tekraredensayilar.push(mesaj);
+	}	
+}
+console.log("Tekrar eden sayılar:", tekraredensayilar.length, "adet");
+console.log("ilk birkaç örnek:", tekraredensayilar.slice(0, 3));
 /* kodlar buraya */
-
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 module.exports = {
   cemberinCevresi,
